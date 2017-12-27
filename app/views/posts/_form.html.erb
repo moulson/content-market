@@ -1,0 +1,82 @@
+
+<div class="container">
+<%= form_for @post, url: {action: "create"}, html: {} do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :post_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, id: :post_title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, id: :post_content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :short_desc %>
+    <%= f.text_area :short_desc, id: :post_short_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, id: :post_image %>
+  </div>
+  <div class="field">
+    <%=f.label :tag %>
+    <%= f.text_field :tag, id: :tag %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+<div>Photos available:</div>
+  <% unless @list.nil? then
+   @list.each do |t| %>
+    <div class="picture flex-wrap">
+      <% t.gsub!("public", "") %>
+      <p><%= image_tag(t, width: '50px', height: '50px') %></p>
+      <p><%= t %></p>
+      <p><%= link_to "Del", delete_file_path(filename: t) %></p>
+    </div>
+  <% end %>
+  <% end %>
+
+</div>
+<script>
+  var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
+Dropzone.autoDiscover = false;
+  var myDropzone = new Dropzone("form.dropzone",{
+    url: "<%= request.base_url %>/uploadfiles",
+    autoProcessQueue: true,
+    uploadMultiple: true,
+    addRemoveLinks:true,
+    parallelUploads:100,
+    maxFiles: 100,
+    params:{
+      'authenticity_token':  AUTH_TOKEN
+    },
+    successmultiple: function(data,response){
+      $('#msgBoard').append(response.message).addClass("alert alert-success");
+      $('#msgBoard').delay(2000).fadeOut();
+      $('#fileslist').val(response.filesList);
+      $('#myForm').off('submit').submit();
+    }
+  });
+</script>

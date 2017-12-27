@@ -1,0 +1,29 @@
+<% content_for(:body_attributes) do %>
+    data-turbolinks="false"
+  <% end %>
+<%= render 'layouts/navbar' %>
+<p id="notice"><%= notice %></p>
+
+<h1 class="blogs-header">Blogs</h1>
+  <div class="posts-container flex-wrap">
+    <% @posts.each do |post| %>
+      <div class="post-container">
+        <%= link_to post do %>
+          <%= image_tag post.image %>
+        <% end %>
+        <div class="title">
+          <%= link_to post.title, post %>
+        </div>
+        <div class="tags">
+          <%= link_to post.tag, post %>
+        </div>
+
+        <div class="admin-options">
+          <%= link_to 'Edit', edit_post_path(post), class: 'btn', data: {no_turbolink: true} %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<%# check if admin %>
+<%= link_to 'New Post', new_post_path %>

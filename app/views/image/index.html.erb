@@ -1,0 +1,25 @@
+
+
+
+<form action="/upload-target" class="dropzone dz-clickable"></form>
+<script>
+  var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
+Dropzone.autoDiscover = false;
+  var myDropzone = new Dropzone(".dropzone",{
+    url: "<%= request.base_url %>/uploadfiles",
+    autoProcessQueue: true,
+    uploadMultiple: true,
+    addRemoveLinks:true,
+    parallelUploads:100,
+    maxFiles: 100,
+    params:{
+      'authenticity_token':  AUTH_TOKEN
+    },
+    successmultiple: function(data,response){
+      $('#msgBoard').append(response.message).addClass("alert alert-success");
+      $('#msgBoard').delay(2000).fadeOut();
+      $('#fileslist').val(response.filesList);
+      $('#myForm').off('submit').submit();
+    }
+  });
+</script>

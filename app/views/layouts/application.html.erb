@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= favicon_link_tag 'cm-fav.png', type: 'image/png' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% unless @title.nil? then %>
+      <title><%= @title %></title>
+    <% else %>
+      <title>The Content Market</title>
+    <% end %>
+    <%= csrf_meta_tags %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body 
+  <% if content_for?(:body_attributes) %>
+    <%= yield(:body_attributes) %> 
+  <% end %>>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
