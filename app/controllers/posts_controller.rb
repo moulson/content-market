@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize, only: [:edit, :update]
+  before_action :authorize, only: [:edit, :update, :create, :new]
   # GET /posts
   # GET /posts.json
   def index
@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @editing = true;
     @list = Dir['public/uploads/*']
   end
 
@@ -87,11 +88,11 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :title, :content, :short_desc, :image, :tag)
+      params.require(:post).permit(:id, :name, :title, :content, :short_desc, :image, :tag)
     end
 end

@@ -1,4 +1,45 @@
+
+
+function Slickify(){
+    $('.slickify').slick({
+      arrows: false,
+      dots: true,
+      infinite: false,
+      draggable: true,
+      slidesToShow: 4,
+      slidesToScroll: 3,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: false,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
+
 $(document).ready(function(){
+
+  Slickify();
+
   tinymce.init({
   selector: 'textarea#post_content',
   file_picker_callback: function(callback, value, meta) {

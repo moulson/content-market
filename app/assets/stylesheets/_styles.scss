@@ -1,12 +1,104 @@
 @import 'variables';
 
 body{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Futura-Medium', sans-serif;
+}
+.form{
+	margin: $lg-spacing !important;
 }
 
+form{
+	.field{
+		text-align: center;
+		label{
+			font-size: 24px;
+			padding: $md-spacing;
+		}
+		input[type=text]{
+
+			padding: $sm-spacing;
+			border-radius: $sm-spacing;
+			border: solid 1px $teal;
+		}
+		input[type=file]{
+			display: none;
+
+		}
+		.upload-btn{
+			border: 2px solid darken($teal, 20%);
+			border-radius: $sm-spacing;
+			line-height: 1.5em;
+			background-color: $teal;
+			transition: background-color 0.2s;
+			&:hover{
+				background-color: darken($teal, 10%);
+			}
+		}
+		textarea{
+			border-radius: $sm-spacing;
+			border: 1px solid $teal;
+			width: 50%;
+			height: 200px;
+		}
+		@media(screen and max-width: $iphone){
+			.upload-btn{
+				width: 70%;
+				margin: auto;
+			}
+			input[type=text]{
+				width: 100%;
+				padding: $md-spacing;
+				font-size: 24px;
+			}
+			textarea{
+				width: 100%;
+			}
+		}
+		@media(screen and max-width: $ipad){
+		}
+		@media(screen and max-width: $desktop){
+			text-align: left;
+			label{
+				font-size: 24px;
+				padding: $md-spacing;
+				text-align: left;
+			}
+			input[type=text]{
+				width: 40%;
+				padding: $md-spacing;
+				font-size: 24px;
+			}
+			.upload-btn{
+				text-align: center;
+				width: 30%;
+			}
+		}
+	}
+	.actions{
+		input[type=submit]{
+			@media(screen and max-width: $desktop){
+				margin-top: $md-spacing; 
+				padding: $md-spacing;
+				font-size: 20px;
+				border: 2px solid darken($teal, 20%);
+				border-radius: $sm-spacing;
+				line-height: 1.5em;
+				background-color: $teal;
+				transition: background-color 0.2s;
+				&:hover{
+					background-color: darken($teal, 10%);
+				}
+			}
+		}
+	}
+}
+
+//Navbar
 .top-nav{
 	background-color: $banner-bg-colour;
 	display: flex;
+	padding: $sm-spacing 0;
+	height: 120px;
 	ul{
 		text-align: center;
 		width: 40%;
@@ -14,27 +106,45 @@ body{
 		display: flex;
 		margin: 0;
 		li{
-			font-size: 1.5em;
+			font-size: 1.7rem;
 			position: relative;
 			top: 30%;
 			width: 50%;
-			text-transform: lowercase;
+			text-transform: uppercase;
 
 			a{
 				text-decoration: none;
-				color: #aaa;
+				color: $nav-text-colour;
 				transition: color 0.5s;
+				line-height: 2rem;
+				&:after{
+					content: '';
+					display: block;
+					width: 0;
+					height: 2.5px;
+					background: #000;
+					transition: width .3s;
+					margin: 5px auto 0 auto;
+					background-color: $teal;
+				}
+				&:hover:after{
+					 width: 40%;
+					 margin: 5px auto 0 auto;
+					}
 			}
 			a:hover{
-				background-color: #fff;
-				color: #000;
+				background-color: transparent;
+				color: $nav-text-colour-h;
 			}
 		}
 	}
 	.logo{
+		text-align: center;
 		width: 20%;
+		padding: 5px;
 		a{
 			img{
+				max-width: 150px;
 				width: 100%;
 				height: auto;
 			}
@@ -42,6 +152,9 @@ body{
 				background-color: $banner-bg-colour;
 			}
 		}
+	}
+	@media screen and (max-width: $iphone){
+
 	}
 }
 .flex-wrap{
@@ -57,40 +170,127 @@ body{
 	margin-top: 20px;
 }
 .banner{
-	background-color: $bg-colour;
+	background-color: $teal;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	width: 100%;
 	height: 500px;
 	text-align: center;
-	span{
-		color: $banner-text-colour;
-		font-size: 32px;
+	text-transform: uppercase;
+	.image{
+		height: 100%;
+		width: 350px;
+		display: inline;
 		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 0;
+		background-size: cover;
+	}
+	.left{
+		background-image: url('banner-left.png');
+		float: left;
+		left: 0;
+	}
+	.right{
+		background-image: url('banner-right.png');
+		float: right;
+		right: 0;
+	}
+	.title-1{
+		color: $banner-text-colour;
+		font-size: 2rem;
+		position: relative;
+		top: 30%;
+		transform: translateY(-30%);
+		span{
+			font-weight: bold;
+		}
+	}
+	.title-2{
+		font-size: 8rem;
+		color: $banner-text-colour;
+		position: relative;
+		top: 45%;
+		transform: translateY(-45%);
+	}
+	@media screen and (min-width: 1038px) and (max-width: 1376px){
+		.title-2{
+			font-size: 4rem;
+		}
+	}
+	@media(screen and max-width: 1038px){
+		.title-2{
+			font-size: 1rem;
+		}
+	}
+	@media screen and (max-width: $ipad){
+		.image{
+			display: none;
+		}
+		.title-2{
+			font-size: 4rem;
+		}
+	}
+	.sub{
+		font-size: 1.2rem;
+		color: $banner-text-colour;
+		position: relative;
+		top: 80%;
+		transform: translateY(-80%);	
+	}
+	img{
+		position:relative;
+		bottom: -20px;
+		width: 13%;
 	}
 }
 .para-1{
 	margin: 0 10%;
-	line-height: 1.5em;
 	padding: $lg-spacing;
 	p{
 		font-size: 18px;
+		line-height: 2em;
 		text-align: justify;
+	}
+	@media screen and (max-width: $iphone){
+		p{
+			font-size: 1rem;
+		}
+	}
+}
+
+.banner-triangle{
+	text-align: center;
+	img{
+		width: 175px;
+		margin: -20px auto auto auto;
 	}
 }
 .services{
 	h1{
+		line-height: 2.5rem;
+		text-transform: uppercase;
 		text-align: center;
 		display: block;
+		margin: $heading-spacing auto;
 	}
 	.service{
 		flex-basis: 30%;
-		padding-top: 30%;
-		position: relative;
+		border-radius: 15px;
 		margin: $md-spacing;
+		.image{
+			text-align: center;
+			padding: $lg-spacing;
+			width: 100%;
+			height: 12vw;
+			img{
+				margin: auto;
+				width: 10vw;
+			}
+		}
 		.title{
-			text-transform: lowercase;
-			position:absolute;
+			text-decoration: none;
+			text-transform: uppercase;
+			line-height: 1.5rem;
 			top:0;
 			left: 0;
 			bottom: 0;
@@ -98,88 +298,212 @@ body{
 			text-align: center;
 			font-size: 24px;
 			padding: $md-spacing;
-		}
-		.seo{
-			//Override for SEO title
-			text-transform: uppercase;
+			&:hover{
+				text-decoration: none;
+			}
+			&:after{
+				content: '';
+				display: block;
+				width: 60%;
+				height: 3px;
+				background: #000;
+				transition: width .3s;
+				margin: 5px auto 0 auto;
+				background-color: $teal;
+			}
 		}
 		.desc{
-			position:absolute;
+			line-height: 2rem;
+			text-transform: uppercase;
 			top:30px;
 			left: 0;
 			bottom: 0;
 			right: 0;
-			text-align: justify;
+			text-align: center;
 			font-size: 20px;
 			padding: $md-spacing;
 		}
-		&:hover{
+	}
+	@media screen and (max-width: $service-break-1){
+		.service{
+			flex-basis: 45%;
+		}
+	}
+	@media screen and (max-width: $iphone){
+		.service{
+			flex-basis: 50%;
+			margin: $sm-spacing;
+			.image{
+				height: 145px;
+				img{
+					width: 90%;
+				}
+			}
 			.title{
-				text-decoration: underline;
+				height: 50px;
+				margin: 10px;
+			}
+			.desc{
+				font-size: 1rem;
+			}
+			.vid{
+				.desc{
+					padding-top: 20px;
+				}
 			}
 		}
 	}
-
-	//Service box colouring
-	.service:nth-child(1){background-color: $service-1-bg;color:$service-1-text;}
-	.service:nth-child(2){background-color: $service-2-bg;color:$service-2-text;}
-	.service:nth-child(3){background-color: $service-3-bg;color:$service-3-text;}
-	.service:nth-child(4){background-color: $service-4-bg;color:$service-4-text;}
-	.service:nth-child(5){background-color: $service-5-bg;color:$service-5-text;}
-	.service:nth-child(6){background-color: $service-6-bg;color:$service-6-text;}
 }
 .container{
 	margin: $sm-spacing;
 }
 .brands{
 	h1{
+		text-transform: uppercase;
 		text-align: center;
+		line-height: 2.2rem;
+		margin: $heading-spacing auto;
 	}
 	.brand{
-		flex-basis: 16%;
-		padding-top:16%;
+		padding: 5px;
 		position: relative;
 		transition: background-color 0.6s;
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center;
+		&:focus{
+			outline: none;
+		} 
 	}
-	.brand:nth-child(1){background-color: $brand-1;&:hover{background-color: darken($brand-1, 15);}}
-	.brand:nth-child(2){background-color: $brand-2;&:hover{background-color: darken($brand-2, 15);}}
-	.brand:nth-child(3){background-color: $brand-3;&:hover{background-color: darken($brand-3, 15);}}
-	.brand:nth-child(4){background-color: $brand-4;&:hover{background-color: darken($brand-4, 15);}}
-	.brand:nth-child(5){background-color: $brand-5;&:hover{background-color: darken($brand-5, 15);}}
-	.brand:nth-child(6){background-color: $brand-6;&:hover{background-color: darken($brand-6, 15);}}
-	.brand:nth-child(7){background-color: $brand-7;&:hover{background-color: darken($brand-7, 15);}}
-	.brand:nth-child(8){background-color: $brand-8;&:hover{background-color: darken($brand-8, 15);}}
-	.brand:nth-child(9){background-color: $brand-9;&:hover{background-color: darken($brand-9, 15);}}
-	.brand:nth-child(10){background-color: $brand-10;&:hover{background-color: darken($brand-10, 15);}}
-	.brand:nth-child(11){background-color: $brand-11;&:hover{background-color: darken($brand-11, 15);}}
-	.brand:nth-child(12){background-color: $brand-12;&:hover{background-color: darken($brand-12, 15);}}
+	.brand:nth-child(1){
+		background: url('carousel/bathstore.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(2){
+		background: url('carousel/bettys.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(3){
+		background: url('carousel/fss.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(4){
+		background: url('carousel/ixpa.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(5){
+		background: url('carousel/je.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(6){
+		background: url('carousel/jespers.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(7){
+		background: url('carousel/thornhvac.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(8){
+		background: url('carousel/nationofsouls.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(9){
+		background: url('carousel/revolution.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(10){
+		background: url('carousel/baltzersens.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(11){
+		background: url('carousel/yorkhouse.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(12){
+		background: url('carousel/virtualresolution.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(13){
+		background: url('carousel/chippindale.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	.brand:nth-child(14){
+		background: url('carousel/orchard.png');
+		background-size: 90% 90%;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+	@media screen and (max-width: $iphone){
+		height: 100vw;
+	}
 }
 
 .case-studies{
 	h1{
+		text-transform: uppercase;
+		margin: $heading-spacing auto;
 		text-align: center;
 		display: block;
+		line-height: 2.5rem;
 	}
-	.case-study{
-		flex-basis: 30%;
-		padding-top: 30%;
-		position:relative;
-		margin: $md-spacing;
-		background-color: #aaa;
-		.title{
-			position: absolute;
-			top:0;
-			left: 0;
-			bottom: 0;
-			right: 0;
+	.cols{
+		.col{
+			.front{
+				.inner{
+					p{
+						line-height: 2.5rem;
+					}
+				}
+			}
+			&.revs{
+				.front{
+					background: url('rev-cuba.png');
+					background-size: cover;
+					background-position: center;
+				}
+			}
+			&.fss{
+				.front{
+					background: url('fss.png');
+					background-size: cover;
+					background-position: center;
+				}
+			}
+			&.chip{
+				.front{
+					background: url('chippindale.png');
+					background-size: cover;
+					background-position: center;
+				}
+			}
 		}
-		.desc{
-			position: absolute;
-			top:20px;
-			left: 0;
-			bottom: 0;
-			right: 0;
-		}
+
 	}
 }
 
@@ -217,14 +541,15 @@ body{
 
 
 .btn{
+	color: #fff;
 	border-radius: 5px;
 	border: solid 1px #a22;
 	padding: $sm-spacing;
 	text-decoration: none;
 	background-color: #800;
-}
-.btn:hover{
-	background-color: darken(#911, 10);
+	&:hover{
+		background-color: darken(#911, 10%);
+	}
 }
 
 .blogs-header{
@@ -315,9 +640,6 @@ h1{
   background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-}
-.front{
-	background-image: url(https://unsplash.it/500/500?random);
 }
 .front:after{
 	position: absolute;
@@ -435,3 +757,199 @@ h1{
     width: 100%;
   }
 }
+
+
+
+
+
+.contact{
+	margin-bottom: $lg-spacing;
+	display: flex;
+	flex-wrap: wrap;
+	h1{
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 2.2rem;
+		margin: $heading-spacing auto;
+	}
+	.cdetails{
+		flex-basis: 50%;
+		.content{
+			padding-left: 20px;
+			width: 80%;
+			font-size: 1.5rem;
+			line-height: 2rem;
+			padding-top: 40px;
+		}
+		.email{
+			display: flex;
+			flex-wrap: wrap;
+			margin: 40px 10px;
+			.image{
+				max-width: 64px;
+				width: 20%;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.content{
+				padding-top: 3px;
+			}
+		}
+		.phone{
+			display: flex;
+			flex-wrap: wrap;
+			margin: 40px 10px;
+			.image{
+				max-width: 64px;
+				width: 20%;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.content{
+				padding-top: 35px;
+			}
+		}
+		.location{
+			display: flex;
+			flex-wrap: wrap;
+			margin: 40px 10px;
+			.image{
+				max-width: 64px;
+				width: 20%;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.content{
+				padding-top: 1px;
+			}
+
+		}
+	}
+	.cform{
+		flex-basis: 40%;
+		box-shadow: 0 0 20px 1px #aaa;
+		border-radius: 25px;
+		margin-right: 10%;
+		h1{
+			margin: 30px;
+			font-size: 2rem;
+		}
+		form{
+			display: block;
+			input::-webkit-input-placeholder {
+				color: $teal;
+			}
+			input:-moz-placeholder { /* Firefox 18- */
+				color: $teal;
+			}
+			 
+			input::-moz-placeholder {  /* Firefox 19+ */
+				color: $teal;
+			}
+			 
+			input:-ms-input-placeholder {  
+				color: $teal;
+			}
+			input[type=text]{
+				color: $teal;
+				font-family: 'Futura';
+				display: block;
+				padding: $lg-spacing;
+				font-size: 1.3rem;
+				border-radius: 15px;
+				box-shadow: none;
+				border: none;
+				background-color: #eee;
+				margin: 30px 0 30px 40px;
+				width: 80%;
+				&:focus{
+					outline: -webkit-focus-ring-color none 0px;
+				}
+			}
+			input[type=email]{
+				color: $teal;
+				font-family: 'Futura';
+				display: block;
+				padding: $lg-spacing;
+				font-size: 1.3rem;
+				border-radius: 15px;
+				box-shadow: none;
+				border: none;
+				background-color: #eee;
+				margin: 30px 0 30px 40px;
+				width: 80%;
+				&:focus{
+					outline: -webkit-focus-ring-color none 0px;
+				}
+			}
+			textarea{
+				resize: none;
+				color: $teal;
+				font-family: 'Futura';
+				display: block;
+				padding: $lg-spacing;
+				font-size: 1.3rem;
+				border-radius: 15px;
+				box-shadow: none;
+				border: none;
+				background-color: #eee;
+				margin: 30px 40px 30px 40px;
+				width: 80%;
+				height: 250px;
+				&:focus{
+					outline: -webkit-focus-ring-color none 0px;
+				}
+				&::-webkit-input-placeholder {
+					color: $teal;
+				}
+				&:-moz-placeholder { /* Firefox 18- */
+					color: $teal;
+				}
+				 
+				&::-moz-placeholder {  /* Firefox 19+ */
+					color: $teal;
+				}
+				 
+				&:-ms-input-placeholder {  
+					color: $teal;
+				}
+			}
+			.field{
+				width: 100%;
+				text-align: center;
+				input[type=submit]{
+					font-family: 'Futura';
+					text-transform: uppercase;
+					border-radius: 20px;
+					border: 3px solid $teal;
+					font-size: 18px;
+					padding: $sm-spacing 50px;
+					margin-bottom: 20px;
+					&:focus{
+						outline: -webkit-focus-ring-color none 0px;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: $ipad){
+		.cdetails{
+			flex-basis: 100%;
+		}
+		.cform{
+			flex-basis: 100%;
+			margin: 10px 30px;
+		}
+	}
+}
+
+
+
+
+

@@ -2,11 +2,24 @@ $bg-colour: #00A9BA;
 $sm-spacing: 5px;
 $md-spacing: 10px;
 $lg-spacing: 20px;
+$heading-spacing: 100px;
 
-$teal: #00A9BA;
+//navbar
+$nav-text-colour: #000;
+$nav-text-colour-h: #000;
+
+//Device widths
+$iphone: 375px;
+$ipad: 768px;
+$desktop: 1920px;
+
+$service-break-1: 1068px;
+
+//Company colours
+$teal: #00abbc;
 $yellow: #FFAD05;
 
-$banner-text-colour: #222;
+$banner-text-colour: #fff;
 $banner-bg-colour: #fff;
 
 //Service box colours

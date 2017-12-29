@@ -8,6 +8,7 @@
 </div>
 
 
-
-<%= link_to 'Edit', edit_post_path(@post), class: 'btn' %>
-<%= link_to 'Back', posts_path, class: 'btn' %>
+<% if current_user then %>
+	<%= link_to 'Edit', edit_post_path(@post), class: 'btn' %>
+	<%= link_to 'Back', posts_path, class: 'btn' %>
+<% end %>

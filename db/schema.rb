@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227012343) do
+ActiveRecord::Schema.define(version: 20171229133230) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20171227012343) do
     t.datetime "updated_at", null: false
     t.string "tag"
     t.string "slug"
+    t.string "alt"
   end
 
   create_table "users", force: :cascade do |t|

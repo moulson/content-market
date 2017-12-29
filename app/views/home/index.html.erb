@@ -1,47 +1,76 @@
 <%= render 'layouts/navbar' %>
 <div class="banner">
-	<span>Content worth sharing</span>
+	<div class="image left"></div>
+	<div class="image right"></div>
+	<div class="title-1">we <span>don't</span> do</div>
+	<div class="title-2">ordinary</div>
+	<div class="sub">take a look</div>
+	</div>
+<div class="banner-triangle">
+	<%= image_tag('tri') %>
 </div>
 <div class="para-1">
-	<p>The Content Market is a forward thinking content marketing agency with a creative approach to multi-channel marketing and consumer digital communications.</p>
- 	<p>With experience in PR, marketing strategy, social media, SEO, websites, design, content creation and video, including animation, we combine online and offline channels for powerful results.</p>
- 	<p>Based in Harrogate and with offices in London and Edinburgh we work with businesses throughout the UK.</p>
- 	<p>Our services include online and traditional PR, on site SEO, launch PR, design, branding, website development, social media marketing and content marketing strategy.</p>
- 	<p>Our content marketing team delivers high quality content to drive brand awareness and visibility across multiple channels.</p>
+	<p>
+		The Content Market is a forward thinking content marketing agency with a creative approach to multi-channel marketing and consumer digital communications. With experience in PR, marketing strategy, social media, SEO, websites, design, content creation and video, including animation, we combine online and offline channels for powerful results.
+	</p>
+ 	<p>
+ 		Based in Harrogate and with offices in London and Edinburgh we work with businesses throughout the UK. Our services include online and traditional PR, on site SEO, launch PR, design, branding, website development, social media marketing and content marketing strategy.
+ 	</p>
+ 	<p>
+ 		Our content marketing team delivers high quality content to drive brand awareness and visibility across multiple channels.
+ 	</p>
 </div>
-<div class="services">
-	<h1>What We Do</h1>
+<div class="services" id="services">
+	<h1>Now, see what we can do for you</h1>
 	<div class="flex-wrap">
-		<div class="service">
+		<div class="service vid">
+			<div class="image">
+				<%= image_tag('services/video') %>
+			</div>
 			<div class="title">Video &amp; Animation</div>
-			<div class="desc">Service description</div>
+			<div class="desc">Striking, engaging and shareable visuals</div>
 		</div>
 		<div class="service">
+			<div class="image">
+				<%= image_tag('services/content') %>
+			</div>
 			<div class="title">Content</div>
-			<div class="desc">Service description</div>
+			<div class="desc">Thought provoking, intelligent and informative blogs and articles</div>
 		</div>
 		<div class="service">
+			<div class="image">
+				<%= image_tag('services/social') %>
+			</div>
 			<div class="title">Social Media</div>
-			<div class="desc">Service description</div>
+			<div class="desc">A personal approach, like you'd do yourself (if you had the time)</div>
 		</div>
 		<div class="service">
+			<div class="image">
+				<%= image_tag('services/web') %>
+			</div>
 			<div class="title">Web Design</div>
-			<div class="desc">Service description</div>
+			<div class="desc">good looking, interactive and engaging websites (like this one)</div>
 		</div>
 		<div class="service">
-			<div class="title seo">SEO</div>
-			<div class="desc">Service description</div>
+			<div class="image">
+				<%= image_tag('services/seo') %>
+			</div>
+			<div class="title">SEO</div>
+			<div class="desc">for online attention seekers</div>
 		</div>
 		<div class="service">
+			<div class="image">
+				<%= image_tag('services/marketing') %>
+			</div>
 			<div class="title">Marketing Campaigns</div>
-			<div class="desc">Service description</div>
+			<div class="desc">big ideas for big results</div>
 		</div>
 		
 	</div>
 </div>
 <div class="brands">
 	<h1>We've worked with some great brands</h1>
-	<div class="flex-wrap">
+	<div class="slickify">
 		<div class="brand">
 		</div>
 		<div class="brand">
@@ -66,65 +95,67 @@
 		</div>
 		<div class="brand">
 		</div>
-		
+		<div class="brand">
+		</div>
+		<div class="brand">
+		</div>
 	</div>
 </div>
-<div class="case-studies">
-	<h1>Success Stories</h1>
+<div class="case-studies" id="success-stories">
 	<div class="wrapper">
-  	<h1>Parallax Flipping Cards</h1>
-  	<div class="cols">
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
+		<h1>And helped them achieve their goals</h1>
+	  	<div class="cols">
+			<div class="col revs" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/500/500)">
+					<div class="front">
 						<div class="inner">
-							<p>Diligord</p>
-              <span>Lorem ipsum</span>
+							<p>Revolution Bars Group</p>
+	          				<span>Launch PR</span>
 						</div>
 					</div>
 					<div class="back">
 						<div class="inner">
-						  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+						  <p>Media coverage, blogger events, cocktail and burrito making, secret salsa and local business collaborations meant the opening of rum bar Revolucion de Cuba in Harrogate was a huge success.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col fss" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front">
+						<div class="inner">
+							<p>FSS Estate Agents</p>
+	          				<span>Animation &amp; Design</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>We’ve used design and animation in all sorts of ways for FSS estate agents. Our Valentine’s Day secret admirer door drop and our popping sale boards animation have really helped raise the brand profile.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col chip" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front">
+						<div class="inner">
+							<p>Chippindale Foods</p>
+	          				<span>Marketing Campaigns</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>Chippindale Foods is passionate about supporting free range egg producers and the environment. We’ve helped them share their passion with innovative campaigns about bumblebee conservation and food provenance.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/501/501)">
-						<div class="inner">
-							<p>Rocogged</p>
-              <span>Lorem ipsum</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/502/502/)">
-						<div class="inner">
-							<p>Strizzes</p>
-              <span>Lorem ipsum</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/503/503/)">
+					<div class="front">
 						<div class="inner">
 							<p>Clossyo</p>
-              <span>Lorem ipsum</span>
+	          <span>Lorem ipsum</span>
 						</div>
 					</div>
 					<div class="back">
@@ -136,10 +167,10 @@
 			</div>
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/504/504/">
+					<div class="front">
 						<div class="inner">
 							<p>Rendann</p>
-              <span>Lorem ipsum</span>
+	          <span>Lorem ipsum</span>
 						</div>
 					</div>
 					<div class="back">
@@ -151,10 +182,10 @@
 			</div>
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/505/505/)">
+					<div class="front">
 						<div class="inner">
 							<p>Reflupper</p>
-              <span>Lorem ipsum</span>
+	          <span>Lorem ipsum</span>
 						</div>
 					</div>
 					<div class="back">
@@ -166,5 +197,48 @@
 			</div>
 		</div>
  	</div>
+</div>
+<div class="contact">
+	<h1>Get in touch so we can help you grow, today</h1>
+	<div class="cdetails">
+		<div class="email">
+			<div class="image">
+				<%= image_tag('services/email') %>
+			</div>
+			<div class="content">
+				hello@content-market.co.uk
+			</div>
+		</div>
+		<div></div>
+		<div class="phone">
+			<div class="image">
+				<%= image_tag('services/phone') %>
+			</div>
+			<div class="content">
+				01423 501323
+			</div>
+		</div>
+		<div></div>
+		<div class="location">
+			<div class="image">
+				<%= image_tag('services/location') %>
+			</div>
+			<div class="content">
+				Windsor House, Cornwall Road <br/>
+				Harrogate, North Yorkshire, HG1 2PW
+			</div>
+		</div>
+	</div>
+	<div class="cform">
+		<h1>send us a message</h1>
+		<form action="/contact">
+			<input type="text" name="name" placeholder="YOUR NAME...">
+			<input type="email" name="email" placeholder="YOUR EMAIL...">
+			<textarea placeholder="YOUR MESSAGE..."></textarea>
+			<div class="field">
+				<input type="submit" value="send" />
+			</div>
+		</form>
+	</div>
 </div>
 

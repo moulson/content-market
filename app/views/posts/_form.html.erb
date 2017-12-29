@@ -1,6 +1,5 @@
-
-<div class="container">
-<%= form_for @post, url: {action: "create"}, html: {} do |f| %>
+<div class="form container">
+<%= form_for @post, html: {} do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,10 +11,14 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name, id: :post_name %>
+    
+    <% if @editing then %>
+      <%= f.text_field :name, id: :post_name, disabled: 'true' %>
+    <% else %>
+      <%= f.text_field :name, id: :post_name %>
+    <% end %>
   </div>
 
   <div class="field">
@@ -33,7 +36,7 @@
     <%= f.text_area :short_desc, id: :post_short_desc %>
   </div>
   <div class="field">
-    <%= f.label :image %>
+    <%= f.label :image, 'Upload Cover Photo', class: 'upload-btn' %>
     <%= f.file_field :image, id: :post_image %>
   </div>
   <div class="field">
@@ -53,7 +56,9 @@
       <% t.gsub!("public", "") %>
       <p><%= image_tag(t, width: '50px', height: '50px') %></p>
       <p><%= t %></p>
-      <p><%= link_to "Del", delete_file_path(filename: t) %></p>
+      <% if current_user %>
+        <p><%= link_to "Del", delete_file_path(filename: t) %></p>
+      <% end %>
     </div>
   <% end %>
   <% end %>

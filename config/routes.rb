@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
+  get 'contact', to: 'home#send_mail', as: 'contact'
   get 'cm-admin', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'home/index'
