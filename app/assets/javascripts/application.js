@@ -14,7 +14,6 @@
 //= require turbolinks
 //= require_tree .
 //= require tinymce/tinymce.min
-//= require dropzone
 //= require slick.min
 //= require common
 
