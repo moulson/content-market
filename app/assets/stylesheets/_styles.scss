@@ -154,7 +154,19 @@ form{
 		}
 	}
 	@media screen and (max-width: $iphone){
-
+		//TODO - Add Hamburger
+		li{
+			display: none;
+		}
+		.logo
+		{
+			width: 80%;
+			a{
+				img{
+					max-width: none;
+				}
+			}
+		}
 	}
 }
 .flex-wrap{
@@ -966,7 +978,14 @@ h1{
 		}
 	}
 }
-
+@media screen and (max-width: $iphone){
+	.slick-dots{
+		li{
+			width: 15px;
+			font-size: 0.5rem;
+		}
+	}
+}
 
 
 
