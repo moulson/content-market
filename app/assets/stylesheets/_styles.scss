@@ -483,21 +483,39 @@ body{
 			}
 			&.revs{
 				.front{
-					background: url('rev-cuba.png');
+					background: url('case-studies/rev_cuba.png');
 					background-size: cover;
 					background-position: center;
 				}
 			}
 			&.fss{
 				.front{
-					background: url('fss.png');
+					background: url('case-studies/fss.png');
 					background-size: cover;
 					background-position: center;
 				}
 			}
 			&.chip{
 				.front{
-					background: url('chippindale.png');
+					background: url('case-studies/chippindale.png');
+					background-size: cover;
+					background-position: center;
+				}
+			}
+			&.jespers{
+
+			}
+			&.fftg{
+				.front{
+					background: url('case-studies/fftg.jpg');
+					background-size: cover;
+					background-position: center;
+				}
+
+			}
+			&.yhl{
+				.front{
+					background: url('case-studies/yhl.jpg');
 					background-size: cover;
 					background-position: center;
 				}
