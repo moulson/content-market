@@ -38,6 +38,23 @@ function Slickify(){
 
 $(document).ready(function(){
 
+  $("#what-we-do-btn").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#services").offset().top
+    }, 2000);
+  });
+  $("#who-we-are-btn").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#who-we-are").offset().top
+    }, 2000);
+  });
+  $("#success-stories-btn").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#success-stories").offset().top
+    }, 2000);
+  });
+
+
   Slickify();
 
   tinymce.init({

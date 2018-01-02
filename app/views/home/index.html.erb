@@ -1,4 +1,7 @@
 <%= render 'layouts/navbar' %>
+<% content_for(:body_attributes) do %>
+	data-turbolinks="false"
+<% end %>
 <div class="banner">
 	<div class="image left"></div>
 	<div class="image right"></div>
