@@ -1,7 +1,9 @@
 <h1>Editing Post</h1>
 
 <%= render 'form', post: @post %>
-<% if current_user then %>
-	<%= link_to 'Show', @post, class: 'btn' %> |
-	<%= link_to 'Back', posts_path, class: 'btn' %>
+<% if current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" %>
+	<% if current_user then %>
+		<%= link_to 'Show', @post, class: 'btn' %> |
+		<%= link_to 'Back', posts_path, class: 'btn' %>
+	<% end %>
 <% end %>

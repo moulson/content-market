@@ -21,12 +21,18 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    unless current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" then
+      redirect_to root_path
+    end
     @post = Post.new
     @list = Dir['public/uploads/*']
   end
 
   # GET /posts/1/edit
   def edit
+    unless current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" then
+      redirect_to root_path
+    end
     @editing = true;
     @list = Dir['public/uploads/*']
   end
@@ -78,10 +84,14 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    unless current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" then
+      redirect_to root_path
+    else
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
