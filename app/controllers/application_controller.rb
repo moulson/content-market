@@ -1,12 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :redirect_subdomain
-
-	def redirect_subdomain
-	  if request.host == 'content-market.co.uk'
-	    redirect_to 'https://www.content-market.co.uk', + request.fullpath, :status => 301
-	  end
-	end
 	private
 
 	def current_user
