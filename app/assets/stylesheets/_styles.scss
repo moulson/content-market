@@ -515,7 +515,11 @@ body{
 				}
 			}
 			&.jespers{
-
+				.front{
+					background: url('case-studies/jespers.jpg');
+					background-size: cover;
+					background-position: center;
+				}
 			}
 			&.fftg{
 				.front{
