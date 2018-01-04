@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
   	@title = "Bright Marketing ideas from The Content Market | Content Agency"
   	@meta_desc = "At the Content Market we don't do ordinary marketing. Agencies in Harrogate, London and Edinburgh."
+    @services = Service.all
   end
 
   def send_mail

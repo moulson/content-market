@@ -21,15 +21,15 @@
 
   <body
   <% if content_for?(:body_attributes) %>
-    <%= yield(:body_attributes) %> 
+    <%= yield(:body_attributes) %>
   <% end %>
   >
-    <% if current_user %>
-      Logged in as <%= current_user.email %>.
-      <%= link_to "Log Out", logout_path %>
-    <% else %>
-    <% end %>
-    <%= yield %>
+    <%# if current_user %>
+    <%# current_user.email %>.
+    <%# link_to "Log Out", logout_path %>
+    <%# else %>
+    <%# end %>
+    <% yield %>
     <%= render 'layouts/footer' %>
   </body>
 </html>
