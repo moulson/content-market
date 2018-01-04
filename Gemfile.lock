@@ -66,8 +66,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    dropzonejs-rails (0.8.2)
-      rails (> 3.1)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -98,6 +96,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
+    mysql2 (0.4.10)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -197,10 +196,10 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  dropzonejs-rails
   friendly_id
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mysql2
   paperclip (~> 5.0.0)
   puma (~> 3.7)
   rails (~> 5.1.4)
