@@ -54,8 +54,4 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.assets.compress = true
-  config.assets.compile = true
-  config.assets.digest = true
-  config.assets.initialize_on_precompile = false
 end
