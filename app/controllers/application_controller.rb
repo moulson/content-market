@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token
 	private
 
 	def current_user
@@ -8,6 +9,6 @@ class ApplicationController < ActionController::Base
 	helper_method :current_user
 
 	def authorize
-		redirect_to root_path, alert: "Not authorized" unless current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin"
-	end
+		redirect_to root_path, alert: "Not authorized" unless current_user
+  end
 end

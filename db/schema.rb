@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171229133230) do
+ActiveRecord::Schema.define(version: 20180104120141) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -38,6 +38,22 @@ ActiveRecord::Schema.define(version: 20171229133230) do
     t.string "tag"
     t.string "slug"
     t.string "alt"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.text "short_desc"
+    t.text "content"
+    t.string "icon_file_name"
+    t.string "icon_content_type"
+    t.integer "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.string "banner_file_name"
+    t.string "banner_content_type"
+    t.integer "banner_file_size"
+    t.datetime "banner_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
