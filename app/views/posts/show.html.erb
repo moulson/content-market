@@ -1,12 +1,13 @@
 <%= render 'layouts/navbar' %>
 <p id="notice"><%= notice %></p>
+<div class="poststyles">
+  <div class="post-container">
+  	<h1 class="post-title"><%= @post.title %></h1>
+  	<div class="post-content">
+  		<%= raw @post.content %>
+  	</div>
+  </div>
 
-<div class="post-container">
-	<h1 class="post-title"><%= @post.title %>
-	<div class="post-content">
-		<%= raw @post.content %>
-	</div>
-</div>
 
 
 <% if current_user then %>
