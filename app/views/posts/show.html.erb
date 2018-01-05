@@ -1,7 +1,8 @@
 <%= render 'layouts/navbar' %>
 <p id="notice"><%= notice %></p>
+
 <div class="post-container">
-	<h1><%= @post.title %>
+	<h1 class="post-title"><%= @post.title %>
 	<div class="post-content">
 		<%= raw @post.content %>
 	</div>
