@@ -1,29 +1,18 @@
+<%= render 'layouts/navbar' %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @service.name %>
-</p>
-
-<p>
-  <strong>Icon:</strong>
-  <%= @service.icon %>
-</p>
-
-<p>
-  <strong>Short desc:</strong>
-  <%= @service.short_desc %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @service.content %>
-</p>
-
-<p>
-  <strong>Banner:</strong>
-  <%= @service.banner %>
-</p>
-
+<div class="service-show">
+	<div class="service-banner">
+		<%= image_tag(@service.banner) %>
+	</div>
+	<div class="service-name">
+		<h1><%=@service.name%></h1>
+	</div>
+	<div class="service-content">
+		<%= raw @service.content %>
+	</div>
+</div>
+<% if current_user %>
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>
+<% end %>

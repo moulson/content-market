@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon, id: :service_icon %>
+    <%= form.label :icon, class: 'upload-btn' %>
+    <%= form.file_field :icon, id: :service_icon %>
   </div>
 
   <div class="field">
@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :service_content %>
+    <%= form.text_area :content, id: :DoMce %>
   </div>
 
   <div class="field">
-    <%= form.label :banner %>
-    <%= form.text_field :banner, id: :service_banner %>
+    <%= form.label :banner, class: 'upload-btn' %>
+    <%= form.file_field :banner, id: :service_banner %>
   </div>
 
   <div class="actions">

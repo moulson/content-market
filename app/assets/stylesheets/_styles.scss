@@ -796,6 +796,7 @@ h1{
 	display: flex;
 	flex-wrap: wrap;
 	h1{
+		width: 100%;
 		text-transform: uppercase;
 		text-align: center;
 		line-height: 2.2rem;
@@ -1101,6 +1102,37 @@ $color-shadow:transparentize(#303336, .9);
 		}
 	}
 }
+
+.footer{
+	height: 250px;
+	background-color: #000080;
+	margin-top: $lg-spacing;
+}
+.service-show{
+	margin: 0 5vw;
+	.service-banner{
+		width: 90vw;
+		text-align: center;
+		img{
+			width: 20vw;
+			height: auto;
+			margin: auto;
+		}
+	}
+	.service-name{
+		text-align: center;
+		h1{
+			margin: 30px 0;	
+		}
+	}
+	.service-content{
+		font-size: 1.5rem;
+	}
+}
+
+
+
+
 
 
 

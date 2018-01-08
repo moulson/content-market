@@ -26,49 +26,15 @@
 <div class="services" id="services">
 	<h1>Now, see what we can do for you</h1>
 	<div class="flex-wrap">
-		<div class="service vid">
-			<div class="image">
-				<%= image_tag('services/video') %>
+		<% @services.each do |service| %>
+			<div class="service">
+				<%= link_to service do %>
+				<div class="image"><%= image_tag(service.icon) %></div>
+				<div class="title"><%=service.name %></div>
+				<div class="desc"><%= service.short_desc %></div>
+				<% end %>
 			</div>
-			<div class="title">Video &amp; Animation</div>
-			<div class="desc">Striking, engaging and shareable visuals</div>
-		</div>
-		<div class="service">
-			<div class="image">
-				<%= image_tag('services/content') %>
-			</div>
-			<div class="title">Content</div>
-			<div class="desc">Thought provoking, intelligent and informative blogs and articles</div>
-		</div>
-		<div class="service">
-			<div class="image">
-				<%= image_tag('services/social') %>
-			</div>
-			<div class="title">Social Media</div>
-			<div class="desc">A personal approach, like you'd do yourself (if you had the time)</div>
-		</div>
-		<div class="service">
-			<div class="image">
-				<%= image_tag('services/web') %>
-			</div>
-			<div class="title">Web Design</div>
-			<div class="desc">good looking, interactive and engaging websites (like this one)</div>
-		</div>
-		<div class="service">
-			<div class="image">
-				<%= image_tag('services/seo') %>
-			</div>
-			<div class="title">SEO</div>
-			<div class="desc">for online attention seekers</div>
-		</div>
-		<div class="service">
-			<div class="image">
-				<%= image_tag('services/marketing') %>
-			</div>
-			<div class="title">Marketing Campaigns</div>
-			<div class="desc">big ideas for big results</div>
-		</div>
-
+		<% end %>
 	</div>
 </div>
 <div class="brands">

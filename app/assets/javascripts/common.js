@@ -58,7 +58,7 @@ $(document).ready(function(){
   Slickify();
 
   tinymce.init({
-  selector: 'textarea#post_content',
+  selector: '#DoMce',
   file_picker_callback: function(callback, value, meta) {
     // Provide file and text for the link dialog
     if (meta.filetype == 'file') {

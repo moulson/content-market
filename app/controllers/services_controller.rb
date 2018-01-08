@@ -1,9 +1,12 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize, only: [:index, :new, :edit, :create, :destroy]
   # GET /services
   # GET /services.json
   def index
+    unless current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" then
+        redirect_to root_path
+    end
     @services = Service.all
   end
 
@@ -14,6 +17,9 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
+    unless current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" then
+	redirect_to root_path
+    end
     @service = Service.new
   end
 
