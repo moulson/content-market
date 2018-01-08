@@ -1,4 +1,7 @@
 <%= render 'layouts/navbar' %>
+<% content_for(:body_attributes) do %>
+	data-turbolinks="false"
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <div class="service-show">

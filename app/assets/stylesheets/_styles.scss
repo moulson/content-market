@@ -1107,6 +1107,17 @@ $color-shadow:transparentize(#303336, .9);
 	height: 250px;
 	background-color: #000080;
 	margin-top: $lg-spacing;
+	.footer-logo{
+		text-align: center;
+		width: 100vw;
+		img{
+			margin: auto;
+			width: 15vw;
+			@media screen and (max-width: $desktop){width: 15vw;}
+			@media screen and (max-width: $ipad){width: 30vw;}
+			@media screen and (max-width: $iphone){width: 35vw;}
+		}
+	}
 }
 .service-show{
 	margin: 0 5vw;

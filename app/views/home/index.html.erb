@@ -25,6 +25,12 @@
 </div>
 <div class="services" id="services">
 	<h1>Now, see what we can do for you</h1>
+	<% unless current_user.nil? %>
+		<% if current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" %>
+			<%= link_to 'New Service', new_service_path, class: 'btn' %>
+		
+		<% end %>
+	<% end %>
 	<div class="flex-wrap">
 		<% @services.each do |service| %>
 			<div class="service">
