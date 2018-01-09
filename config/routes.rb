@@ -6,9 +6,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  resources :users
   resources :posts
-  resources :users
   resources :sessions
 
   get 'contact', to: 'home#send_mail', as: 'contact'
