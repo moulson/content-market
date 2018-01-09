@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.4'
 gem 'paperclip', "~> 5.0.0"
 gem 'friendly_id'
 gem 'mysql2'
+gem 'sitemap_generator'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
