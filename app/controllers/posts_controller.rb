@@ -68,8 +68,8 @@ class PostsController < ApplicationController
   end
 
   def upload
-    uploaded_pics = params[:file] 
-    time_footprint = Time.now.to_i.to_s(:number) 
+    uploaded_pics = params[:file]
+    time_footprint = Time.now.to_i.to_s(:number)
     #abort uploaded_pics.inspect
     uploaded_pics.each do |index,pic|
       File.open(Rails.root.join('public', 'uploads', pic.original_filename), 'wb') do |file|
@@ -77,8 +77,8 @@ class PostsController < ApplicationController
         File.rename(file, 'public/uploads/' + time_footprint + pic.original_filename)
       end
     end
-    files_list = Dir['public/uploads/*'].to_json 
-    render json: { message: 'You have successfully uploded your images.', files_list: files_list } 
+    files_list = Dir['public/uploads/*'].to_json
+    render json: { message: 'You have successfully uploded your images.', files_list: files_list }
   end
 
   # DELETE /posts/1

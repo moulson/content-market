@@ -7,6 +7,7 @@
 
   <h1 class="blogs-header">Blogs</h1>
     <div class="posts-container flex-wrap">
+      <% @posts = @posts.order('created_at DESC') %>
       <% @posts.each do |post| %>
         <div class="post">
           <%= link_to post do %>
