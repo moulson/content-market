@@ -1108,6 +1108,27 @@ $color-shadow:transparentize(#303336, .9);
 	background-color: #003f57;
 	margin-top: $lg-spacing;
 	padding-top: 20px;
+	.flex-row{
+		display: flex;
+		flex-wrap: nowrap;
+		padding-top: 50px;
+		margin: 0 $md-spacing;
+		.privacy{
+			float: right;
+			color: #fff;
+			padding: 0 20px;
+			a{
+				color: #fff;
+			}
+			a:hover{
+				background: none;
+			}
+		}
+		.copy{
+			float: right;
+			color: #fff;
+		}
+	}
 	.footer-logo{
 		text-align: center;
 		width: 100vw;
@@ -1141,7 +1162,32 @@ $color-shadow:transparentize(#303336, .9);
 		font-size: 1.5rem;
 	}
 }
-
+.about-container{
+	margin: 0 10vw;
+	padding: 20px;
+	p{
+	font-size: 18px;
+	line-height: 2em;
+	font-family: 'Futura';
+	text-align: justify;
+	}
+	p.header{
+		font-size: 2.2rem;
+		margin: 20px 0;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	p.contact{
+		margin-top: 15px;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	@media screen and (max-width: $iphone){
+		p{
+			text-align: justify;
+		}
+	}
+}
 
 
 

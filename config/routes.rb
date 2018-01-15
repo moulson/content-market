@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :sessions
-
+  get 'about', to: 'about#index', as: 'about'
   get 'contact', to: 'home#send_mail', as: 'contact'
   get 'cm-admin', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'

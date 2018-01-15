@@ -19,9 +19,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body
+  <body data-turbolinks="false"
   <% if content_for?(:body_attributes) %>
-    <%= yield(:body_attributes) %> 
+    <%= yield(:body_attributes) %>
   <% end %>
   >
     <% if current_user %>

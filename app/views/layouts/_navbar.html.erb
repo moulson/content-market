@@ -1,16 +1,28 @@
 
 <nav class="top-nav">
 	<ul>
-		<li><%=link_to 'What We do', '#', id: 'what-we-do-btn' %></li>
-		<li><%=link_to 'Who We Are', '#', id: 'who-we-are-btn' %></li>
+		<li>
+			<% if @index_page %>
+				<%=link_to 'What We do', '#', id: 'what-we-do-btn' %>
+			<% else %>
+				<%=link_to 'What We do', '/#services', id: 'what-we-do-btn' %>
+			<% end %>
+		</li>
+		<li><%=link_to 'Who We Are', about_path, id: 'who-we-are-btn' %></li>
 	</ul>
 	<div class="logo">
 		<%= link_to root_path do %>
 			<%= image_tag 'cm-logo' %>
 		<% end %>
 	</div>
-	<ul>		
-		<li><%=link_to 'Success Stories', '#', id: 'success-stories-btn' %></li>
+	<ul>
+		<li>
+			<% if @index_page %>
+				<%=link_to 'Success Stories', '#', id: 'success-stories-btn' %>
+			<% else %>
+				<%=link_to 'Success Stories', '/#success-stories', id: 'success-stories-btn' %>
+			<% end %>
+		</li>
 		<li><%=link_to 'Blog', posts_path %></li>
 	</ul>
 </nav>
