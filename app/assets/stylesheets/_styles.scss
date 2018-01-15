@@ -1104,7 +1104,6 @@ $color-shadow:transparentize(#303336, .9);
 }
 
 .footer{
-	height: 250px;
 	background-color: #003f57;
 	margin-top: $lg-spacing;
 	padding-top: 20px;
@@ -1134,6 +1133,7 @@ $color-shadow:transparentize(#303336, .9);
 			display: flex;
 			flex-wrap: nowrap;
 			width: 20%;
+			padding-bottom: 10px;
 			div{
 				width: 33%;
 				text-align: center;
