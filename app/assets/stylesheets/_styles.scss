@@ -1107,11 +1107,23 @@ $color-shadow:transparentize(#303336, .9);
 	background-color: #003f57;
 	margin-top: $lg-spacing;
 	padding-top: 20px;
+	.footer-top{
+		text-align: center;
+	}
 	.flex-row{
 		display: flex;
 		flex-wrap: nowrap;
 		padding-top: 50px;
 		margin: 0 $md-spacing;
+		.phone{
+			text-align: center;
+			width: 33%;
+			margin:auto;
+			color: #fff;
+			p{
+				font-size: 18px;
+			}
+		}
 		.privacy{
 			width: 20%;
 			text-align:left;
@@ -1155,7 +1167,7 @@ $color-shadow:transparentize(#303336, .9);
 	}
 	.footer-logo{
 		text-align: center;
-		width: 100vw;
+		width: 33%;
 		img{
 			margin: auto;
 			width: 15vw;

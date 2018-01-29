@@ -10,11 +10,10 @@ class HomeController < ApplicationController
       end
     end
   end
-
   def send_mail
-  	ActionMailer::Base.mail(to: 'dan24797@gmail.com',
-         body: 'hello there',
-         content_type: "text/plain",
-         subject: "Already rendered!")
+    @name = params[:contact_name]
+    @email = params[:contact_email]
+    @message = params[:contact_message]
+    ContactMailer.send_mail(@name, @email, @message).deliver_now
   end
 end

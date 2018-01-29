@@ -28,7 +28,7 @@
 	<% unless current_user.nil? %>
 		<% if current_user.email == "dan24797@gmail.com" || current_user.email == "cmadmin" %>
 			<%= link_to 'New Service', new_service_path, class: 'btn' %>
-		
+
 		<% end %>
 	<% end %>
 	<div class="flex-wrap">
@@ -206,10 +206,10 @@
 	</div>
 	<div class="cform">
 		<h1>send us a message</h1>
-		<form action="/contact">
-			<input type="text" name="name" placeholder="YOUR NAME...">
-			<input type="email" name="email" placeholder="YOUR EMAIL...">
-			<textarea placeholder="YOUR MESSAGE..."></textarea>
+		<form action="/send-mail">
+			<input type="text" name="contact_name" placeholder="YOUR NAME...">
+			<input type="email" name="contact_email" placeholder="YOUR EMAIL...">
+			<textarea name="contact_message" placeholder="YOUR MESSAGE..."></textarea>
 			<div class="field">
 				<input type="submit" value="send" />
 			</div>
